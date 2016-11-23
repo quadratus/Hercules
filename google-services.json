@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "602545109344",
+    "firebase_url": "https://hercules-99c8a.firebaseio.com",
+    "project_id": "hercules-99c8a",
+    "storage_bucket": "hercules-99c8a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:602545109344:android:4a856dfb72432df5",
+        "android_client_info": {
+          "package_name": "com.team_f.hercules"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "602545109344-d4odv749ua9r741pb7seld45rgjoqtdr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzzvCnwtQorlf-sVkoT4lWgb528qbtqlQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

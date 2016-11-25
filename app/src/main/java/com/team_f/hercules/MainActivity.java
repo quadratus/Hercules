@@ -45,7 +45,7 @@ TextView t1,t2;
                         }
                         else
                         {
-                            Intent in = new Intent(user_screen.class);
+                            Intent in = new Intent("com.team_f.hercules.user_screen");
                             startActivity(in);
                             finish();
 

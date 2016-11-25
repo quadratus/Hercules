@@ -45,7 +45,7 @@
             android:textAlignment="center"
             android:textColor="@color/white"
             android:layout_marginBottom="30dp"
-            />
+            android:id="@+id/exercise" />
 
         <Button
             android:layout_width="match_parent"
@@ -55,7 +55,8 @@
             android:text="Workouts"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:layout_marginBottom="30dp"/>
+            android:layout_marginBottom="30dp"
+            android:id="@+id/workout" />
 
         <Button
             android:layout_width="match_parent"
@@ -65,7 +66,8 @@
             android:text="Diet Chart"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:layout_marginBottom="30dp"/>
+            android:layout_marginBottom="30dp"
+            android:id="@+id/diet" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -74,7 +76,8 @@
             android:text="My account"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:layout_marginBottom="30dp"/>
+            android:layout_marginBottom="30dp"
+            android:id="@+id/myaccount" />
     </LinearLayout>
 
 </LinearLayout>

@@ -21,7 +21,12 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-        <activity android:name=".exer"></activity>
+        <activity android:name=".exer">
+            <intent-filter>
+                <action android:name="com.team_f.hercules.exer"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

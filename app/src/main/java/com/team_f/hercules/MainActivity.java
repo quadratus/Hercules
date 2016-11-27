@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-TextView t1,t2;
+EditText t1,t2;
     Button b1,b2;
     String s1,s2;
     private FirebaseAuth mAuth;
@@ -26,11 +27,17 @@ TextView t1,t2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        t1=(TextView)findViewById(R.id.email);
-        t2=(TextView)findViewById(R.id.pass);
+        setContentView(R.layout.activity_main);
+        t1=(EditText)findViewById(R.id.email);
+        t2=(EditText)findViewById(R.id.pass);
         mAuth = FirebaseAuth.getInstance();
         b1=(Button)findViewById(R.id.b1);
-        b1.setOnClickListener(MainActivity.this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        s1=t1.getText().toString();
+        s2=t2.getText().toString();
         mAuth.signInWithEmailAndPassword(s1,s2)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -52,14 +59,10 @@ TextView t1,t2;
                     }
                 });
 
-
-
     }
 
-    @Override
-    public void onClick(View view) {
-        s1=t1.getText().toString();
-        s2=t2.getText().toString();
-
+    public void reg(View v){
+        Intent reg = new Intent("com.team_f.hercules.register");
+        startActivity(reg);
     }
 }

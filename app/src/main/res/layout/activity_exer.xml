@@ -11,77 +11,77 @@
     tools:context="com.team_f.hercules.exer">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="33dp">
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="33dp"
+        android:orientation="vertical">
 
         <Button
+            android:id="@+id/button14"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
             android:background="@color/colorPrimary"
             android:fontFamily="sans-serif-smallcaps"
             android:text="Legs"
             android:textAlignment="center"
-            android:textColor="@color/white"
-            android:layout_marginBottom="30dp"
-            android:id="@+id/button14" />
+            android:textColor="@color/white" />
 
         <Button
+            android:id="@+id/button13"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
             android:background="@color/colorPrimary"
             android:fontFamily="sans-serif-smallcaps"
             android:text="Chest"
             android:textAlignment="center"
-            android:textColor="@color/white"
-            android:layout_marginBottom="30dp"
-            android:id="@+id/button13" />
+            android:textColor="@color/white" />
 
         <Button
+            android:id="@+id/button11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
             android:background="@color/colorPrimary"
             android:fontFamily="sans-serif-smallcaps"
             android:text="Back"
             android:textAlignment="center"
-            android:textColor="@color/white"
-            android:layout_marginBottom="30dp"
-            android:id="@+id/button11" />
+            android:textColor="@color/white" />
 
         <Button
+            android:id="@+id/button10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
             android:background="@color/colorPrimary"
             android:fontFamily="sans-serif-smallcaps"
             android:text="Shoulders"
             android:textAlignment="center"
-            android:textColor="@color/white"
-            android:layout_marginBottom="30dp"
-            android:id="@+id/button10" />
+            android:textColor="@color/white" />
 
         <Button
+            android:id="@+id/button9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
             android:background="@color/colorPrimary"
             android:fontFamily="sans-serif-smallcaps"
             android:text="Biceps"
             android:textAlignment="center"
-            android:textColor="@color/white"
-            android:layout_marginBottom="30dp"
-            android:id="@+id/button9" />
+            android:textColor="@color/white" />
 
         <Button
+            android:id="@+id/button8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
             android:background="@color/colorPrimary"
             android:fontFamily="sans-serif-smallcaps"
             android:text="Triceps"
             android:textAlignment="center"
-            android:textColor="@color/white"
-            android:layout_marginBottom="30dp"
-            android:id="@+id/button8" />
+            android:textColor="@color/white" />
     </LinearLayout>
 </RelativeLayout>

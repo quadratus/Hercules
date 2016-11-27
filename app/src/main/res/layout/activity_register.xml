@@ -212,6 +212,7 @@
                 android:fontFamily="sans-serif-smallcaps"
                 android:text="Register"
                 android:textColor="@color/white"
+                android:onClick="reg"
                 android:textStyle="normal|bold" />
 
         </LinearLayout>

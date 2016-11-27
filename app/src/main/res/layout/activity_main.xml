@@ -51,8 +51,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-smallcaps"
-
-                    android:hint="Hello"
+                    android:hint="Username"
                     android:inputType="textNoSuggestions" />
 
 
@@ -74,6 +73,7 @@
                     android:textColor="@color/white" />
 
                 <Button
+                    android:id="@+id/trainee"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"

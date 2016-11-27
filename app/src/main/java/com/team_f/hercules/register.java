@@ -62,9 +62,38 @@ public class register extends AppCompatActivity {
         sex = (RadioGroup) findViewById(R.id.rg);
         activity=(RadioGroup)findViewById(R.id.gen);
 
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                reg(mail.getText().toString(),password.getText().toString());
+            }
+        });
+
     }
 
-    public void reg(View v){
+    public void reg(String email,String pass){
+
+        mAuth.createUserWithEmailAndPassword(email, pass)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
+
+                        // If sign in fails, display a message to the user. If sign in succeeds
+                        // the auth state listener will be notified and logic to handle the
+                        // signed in user can be handled in the listener.
+                        if (!task.isSuccessful()) {
+                            Toast.makeText(register.this, R.string.auth_failed,
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                            Intent in = new Intent("com.team_f.hercules.MainActivity");
+                            startActivity(in);
+                        }
+
+                        // ...
+                    }
+                });
 
     }
 }

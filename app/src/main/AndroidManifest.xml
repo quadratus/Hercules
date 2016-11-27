@@ -15,18 +15,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".user_screen" >
+        <activity android:name=".user_screen">
             <intent-filter>
-                <action android:name="com.team_f.hercules.user_screen"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="com.team_f.hercules.user_screen" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".exer">
             <intent-filter>
-                <action android:name="com.team_f.hercules.exer"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="com.team_f.hercules.exer" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".trainer_menu" />
+        <activity android:name=".register"></activity>
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package com.team_f.hercules;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.nfc.Tag;
 import android.os.StrictMode;
@@ -27,17 +28,19 @@ import java.io.InputStream;
 
 public class register extends AppCompatActivity {
 
-    EditText name, password, address, mail,weight,height;
-    RadioGroup sex,activity;
+    EditText name, password, address, mail, weight, height;
+    RadioGroup sex, activity;
     Button register;
     InputStream is;
     String tag = "Error";
     private static final String TAG = "MainActivity";
 
+    private DatabaseReference mDataBase;
+
     private FirebaseAuth mAuth;
     private FirebaseDatabase mDb;
-    private DatabaseReference rootRef;
-    private User u= new User();
+    private User u = new User();
+    private ProgressDialog mProgress;
 
 
     @Override
@@ -49,29 +52,37 @@ public class register extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         mDb = FirebaseDatabase.getInstance();
-        rootRef = mDb.getReference();
+        mDataBase = FirebaseDatabase.getInstance().getReference().child("Hercules");
 
         name = (EditText) findViewById(R.id.name);
         password = (EditText) findViewById(R.id.pass);
         address = (EditText) findViewById(R.id.addr);
         mail = (EditText) findViewById(R.id.email);
         register = (Button) findViewById(R.id.reg);
-        weight = (EditText)findViewById(R.id.weight) ;
-        height = (EditText)findViewById(R.id.height);
+        weight = (EditText) findViewById(R.id.weight);
+        height = (EditText) findViewById(R.id.height);
 
         sex = (RadioGroup) findViewById(R.id.rg);
-        activity=(RadioGroup)findViewById(R.id.gen);
+        activity = (RadioGroup) findViewById(R.id.gen);
+
+        int s = sex.getCheckedRadioButtonId();
+        int a = activity.getCheckedRadioButtonId();
+
+        final RadioButton sexx = (RadioButton) findViewById(s);
+        final RadioButton act = (RadioButton) findViewById(a);
+
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                reg(mail.getText().toString(),password.getText().toString());
+                reg(mail.getText().toString(), password.getText().toString(), address.getText().toString(),
+                        weight.getText().toString(), height.getText().toString(), "Male", "Heavy");
             }
         });
-
     }
 
-    public void reg(String email,String pass){
+    public void reg(final String email, final String pass, final String address, final String weight, final
+    String height, final String gender, final String activity) {
 
         mAuth.createUserWithEmailAndPassword(email, pass)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -86,10 +97,19 @@ public class register extends AppCompatActivity {
                             Toast.makeText(register.this, R.string.auth_failed,
                                     Toast.LENGTH_SHORT).show();
                         }
-                        else{
-                            Intent in = new Intent("com.team_f.hercules.MainActivity");
-                            startActivity(in);
+                        else {
+
+                            DatabaseReference pushData = mDataBase.push();
+                            pushData.child("Email").setValue(email);
+                            pushData.child("Addresss").setValue(address);
+                            pushData.child("Weight").setValue(weight);
+                            pushData.child("Height").setValue(height);
+                            pushData.child("Gender").setValue(gender);
+                            pushData.child("Activity").setValue(activity);
+                        /*Intent in = new Intent("com.team_f.hercules.MainActivity");
+                        startActivity(in);*/
                         }
+
 
                         // ...
                     }

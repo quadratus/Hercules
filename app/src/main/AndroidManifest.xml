@@ -29,13 +29,21 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".trainer_menu" />
-        <activity android:name=".register">
+        <activity android:name=".trainer_menu">
             <intent-filter>
-                <action android:name="com.team_f.hercules.register" />
+                <action android:name="com.team_f.hercules.trainer_menu" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".register">
+            <intent-filter>
+                <action android:name="com.team_f.hercules.register" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".client_view"></activity>
     </application>
 
 </manifest>

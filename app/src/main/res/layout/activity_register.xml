@@ -24,9 +24,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-smallcaps"
-                android:paddingBottom="50dp"
+                android:paddingBottom="30dp"
                 android:text="Enter Credentials"
                 android:textAlignment="center"
+                android:textStyle="bold"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18sp" />
 
@@ -110,13 +111,27 @@
                     android:textColor="@color/colorPrimary" />
             </android.support.design.widget.TextInputLayout>
 
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/age_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:hint="Age"
+                    android:inputType="number"
+                    android:textColor="@color/colorPrimary" />
+            </android.support.design.widget.TextInputLayout>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-smallcaps"
-                android:paddingBottom="20dp"
+                android:paddingBottom="7dp"
                 android:paddingLeft="4sp"
-                android:paddingTop="20sp"
+                android:paddingTop="7sp"
                 android:text="Gender"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18sp" />
@@ -155,7 +170,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-smallcaps"
-                android:paddingBottom="20dp"
+                android:paddingBottom="7dp"
                 android:paddingLeft="4sp"
                 android:paddingTop="10dp"
                 android:text="Activity Level"

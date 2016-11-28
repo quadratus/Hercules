@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Hercules</string>
-    <string name="auth_failed">Bund mara</string>
+    <string name="auth_failed">Its a no go</string>
 </resources>

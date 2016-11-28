@@ -28,11 +28,12 @@ import java.io.InputStream;
 
 public class register extends AppCompatActivity {
 
-    EditText name, password, address, mail, weight, height;
+    EditText name, password, address, mail, weight, height, age;
     RadioGroup sex, activity;
     Button register;
     InputStream is;
     String tag = "Error";
+    String acti, gendres;
     private static final String TAG = "MainActivity";
 
     private DatabaseReference mDataBase;
@@ -61,6 +62,7 @@ public class register extends AppCompatActivity {
         register = (Button) findViewById(R.id.reg);
         weight = (EditText) findViewById(R.id.weight);
         height = (EditText) findViewById(R.id.height);
+        age = (EditText) findViewById(R.id.age_input);
 
         sex = (RadioGroup) findViewById(R.id.rg);
         activity = (RadioGroup) findViewById(R.id.gen);
@@ -71,18 +73,21 @@ public class register extends AppCompatActivity {
         final RadioButton sexx = (RadioButton) findViewById(s);
         final RadioButton act = (RadioButton) findViewById(a);
 
+        gendres = sexx.getText().toString();
+        acti = act.getText().toString();
+
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 reg(mail.getText().toString(), password.getText().toString(), address.getText().toString(),
-                        weight.getText().toString(), height.getText().toString(), "Male", "Heavy");
+                        weight.getText().toString(), height.getText().toString(), gendres, acti, age.getText().toString());
             }
         });
     }
 
     public void reg(final String email, final String pass, final String address, final String weight, final
-    String height, final String gender, final String activity) {
+    String height, final String gender, final String activity, final String age) {
 
         mAuth.createUserWithEmailAndPassword(email, pass)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -96,8 +101,7 @@ public class register extends AppCompatActivity {
                         if (!task.isSuccessful()) {
                             Toast.makeText(register.this, R.string.auth_failed,
                                     Toast.LENGTH_SHORT).show();
-                        }
-                        else {
+                        } else {
 
                             DatabaseReference pushData = mDataBase.push();
                             pushData.child("Email").setValue(email);
@@ -106,6 +110,7 @@ public class register extends AppCompatActivity {
                             pushData.child("Height").setValue(height);
                             pushData.child("Gender").setValue(gender);
                             pushData.child("Activity").setValue(activity);
+                            pushData.child("Age").setValue(age);
                         /*Intent in = new Intent("com.team_f.hercules.MainActivity");
                         startActivity(in);*/
                         }

@@ -54,6 +54,7 @@ public class trainer_menu extends Activity {
                     @Override
                     public void onClick(View view) {
                         Intent client = new Intent(trainer_menu.this,client_view.class);
+                        client.putExtra("case_id",post_key);
                         startActivity(client);
                     }
                 });

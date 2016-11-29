@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -120,7 +121,8 @@ EditText t1,t2;
                             Toast.makeText(MainActivity.this, R.string.auth_failed,
                                     Toast.LENGTH_SHORT).show();
                         }
-
+                        Intent inw = new Intent("com.team_f.hercules.user_screen");
+                        startActivity(inw);
                         // ...
                     }
                 });
